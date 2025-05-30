@@ -1,16 +1,16 @@
 plugins {
-    alias(libs.plugins.kotlin.jvm)
+    alias(aoc2022Libs.plugins.kotlin.jvm)
 }
 
 dependencies {
-    api(project(":utils"))
+    api(project(":aoc-utils"))
 
-    implementation(libs.commons.lang3)
+    implementation(aoc2022Libs.commons.lang3)
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
-    testImplementation(libs.equalsverifier)
+    testImplementation(aoc2022Libs.equalsverifier)
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
