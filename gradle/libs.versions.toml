@@ -4,6 +4,9 @@ equalsverifier = "4.0"
 hamcrest = "3.0"
 junit5 = "5.12.2"
 kotlin-jvm = "2.1.21"
+scala3-library = "3.4.2"
+scala3-scalatest = "3.3.0-SNAP4"
+scala3-scalatestplus-junit = "3.2.18.0"
 sonarqube-plugin = "6.2.0.5505"
 
 [libraries]
@@ -11,6 +14,9 @@ commons-lang3 = { group = "org.apache.commons", name = "commons-lang3", version.
 equalsverifier = { group = "nl.jqno.equalsverifier", name = "equalsverifier", version.ref = "equalsverifier" }
 hamcrest = { group = "org.hamcrest", name = "hamcrest", version.ref = "hamcrest" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit5" }
+scala3-library = { group = "org.scala-lang", name = "scala3-library_3", version.ref = "scala3-library" }
+scala3-scalatest = { group = "org.scalatest", name = "scalatest_3", version.ref = "scala3-scalatest" }
+scala3-scalatestplus-junit = { group = "org.scalatestplus", name = "junit-5-10_3", version.ref = "scala3-scalatestplus-junit" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-jvm" }

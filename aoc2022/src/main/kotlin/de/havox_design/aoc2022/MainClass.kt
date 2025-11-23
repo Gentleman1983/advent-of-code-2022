@@ -13,14 +13,17 @@ import de.havox_design.aoc2022.day09.RopeBridge
 import de.havox_design.aoc2022.day10.CathodeRayTube
 import de.havox_design.aoc2022.day11.MonkeyInTheMiddle
 import de.havox_design.aoc2022.day11.MonkeyInTheMiddleJava
+import de.havox_design.aoc2022.day11.ScalaMonkeyInTheMiddle
 import de.havox_design.aoc2022.day12.HillClimbingAlgorithm
 import de.havox_design.aoc2022.day13.DistressSignal
 import de.havox_design.aoc2022.day14.RegolithReservoir
 import de.havox_design.aoc2022.day15.BeaconExclusionZone
 import de.havox_design.aoc2022.day16.ProboscideaVolcanium
 import de.havox_design.aoc2022.day16.ProboscideaVolcaniumJava
+import de.havox_design.aoc2022.day16.ScalaProboscideaVolcanium
 import de.havox_design.aoc2022.day17.PyroclasticFlowJava
 import de.havox_design.aoc2022.day17.PyroclasticFlow
+import de.havox_design.aoc2022.day17.ScalaPyroclasticFlow
 import de.havox_design.aoc2022.day18.BoilingBoulders
 import de.havox_design.aoc2022.day19.NotEnoughMinerals
 import de.havox_design.aoc2022.day20.GrovePositioningSystem
@@ -133,7 +136,7 @@ class MainClass : AocMainClassHelper {
         day(
             getDayString(day),
             MonkeyInTheMiddle(getFileName(day))::processPart1,
-            MonkeyInTheMiddleJava(getFileName(day))::solvePart2,
+            this::monkeyInTheMiddePart2,
             daysSelected,
             args
         )
@@ -178,7 +181,7 @@ class MainClass : AocMainClassHelper {
         day(
             getDayString(day),
             ProboscideaVolcanium(getFileName(day))::processPart1,
-            ProboscideaVolcaniumJava(getFileName(day))::solvePart2,
+            this::proboscideaVolcaniumPart2,
             daysSelected,
             args
         )
@@ -187,7 +190,7 @@ class MainClass : AocMainClassHelper {
         day(
             getDayString(day),
             PyroclasticFlow(getFileName(day))::processPart1,
-            PyroclasticFlowJava(getFileName(day))::solvePart2,
+            this::pyroclasticFlowPart2,
             daysSelected,
             args
         )
@@ -273,6 +276,48 @@ class MainClass : AocMainClassHelper {
         return "\nCRT preview:\n" +
                 "===========\n" +
                 "${CathodeRayTube(filename).processPart2()}"
+    }
+
+    private fun monkeyInTheMiddePart2(): String {
+        val filename = getFileName(11)
+        val result = StringBuilder()
+
+        result
+            .append("Java: ")
+            .append(MonkeyInTheMiddleJava(filename).solvePart2())
+            .append(", Scala: ")
+            .append(ScalaMonkeyInTheMiddle.solvePart2(filename, 10_000))
+
+        return result
+            .toString()
+    }
+
+    private fun proboscideaVolcaniumPart2(): String {
+        val filename = getFileName(16)
+        val result = StringBuilder()
+
+        result
+            .append("Java: ")
+            .append(ProboscideaVolcanium(filename).processPart2())
+            .append(", Scala: ")
+            .append(ScalaProboscideaVolcanium.solvePart2(filename, 10_000))
+
+        return result
+            .toString()
+    }
+
+    private fun pyroclasticFlowPart2(): String {
+        val filename = getFileName(17)
+        val result = StringBuilder()
+
+        result
+            .append("Java: ")
+            .append(PyroclasticFlow(filename).processPart2())
+            .append(", Scala: ")
+            .append(ScalaPyroclasticFlow.solvePart2(filename, 10_000))
+
+        return result
+            .toString()
     }
 
     private fun blizzardBasinPart2(): String {
