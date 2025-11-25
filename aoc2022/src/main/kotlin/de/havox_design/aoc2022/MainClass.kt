@@ -302,6 +302,8 @@ class MainClass : AocMainClassHelper {
 
         result
             .append("Java: ")
+            .append(ProboscideaVolcaniumJava.solvePart2(filename))
+            .append(", Kotlin: ")
             .append(ProboscideaVolcanium(filename).processPart2())
             .append(", Scala: ")
             .append(ScalaProboscideaVolcanium.solvePart2(filename, 10_000))
@@ -316,6 +318,8 @@ class MainClass : AocMainClassHelper {
 
         result
             .append("Java: ")
+            .append(PyroclasticFlowJava.solvePart2(filename))
+            .append(", Kotlin: ")
             .append(PyroclasticFlow(filename).processPart2())
             .append(", Scala: ")
             .append(ScalaPyroclasticFlow.solvePart2(filename, 10_000))
