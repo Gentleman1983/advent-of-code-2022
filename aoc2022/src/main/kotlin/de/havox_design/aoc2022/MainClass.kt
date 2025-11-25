@@ -178,22 +178,26 @@ class MainClass : AocMainClassHelper {
         )
 
         day = 16
-        day(
-            getDayString(day),
-            ProboscideaVolcanium(getFileName(day))::processPart1,
-            this::proboscideaVolcaniumPart2,
-            daysSelected,
-            args
-        )
+        if (!args.contains("testing")) {
+            day(
+                getDayString(day),
+                ProboscideaVolcanium(getFileName(day))::processPart1,
+                this::proboscideaVolcaniumPart2,
+                daysSelected,
+                args
+            )
+        }
 
         day = 17
-        day(
-            getDayString(day),
-            PyroclasticFlow(getFileName(day))::processPart1,
-            this::pyroclasticFlowPart2,
-            daysSelected,
-            args
-        )
+        if (!args.contains("testing")) {
+            day(
+                getDayString(day),
+                PyroclasticFlow(getFileName(day))::processPart1,
+                this::pyroclasticFlowPart2,
+                daysSelected,
+                args
+            )
+        }
 
         day = 18
         day(
